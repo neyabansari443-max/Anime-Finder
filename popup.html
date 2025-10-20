@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime-Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header-buttons">
+        <button id="supportBtn" class="header-btn"><span role="img" aria-label="heart">❤️</span> Support</button>
+        <button id="feedbackBtn" class="header-btn"><span role="img" aria-label="lightbulb">💡</span> Feedback</button>
+    </div>
+
+    <div id="mainPage" class="page active-page">
+        <h1>Anime-Finder</h1>
+        <p>Enter an anime name to find its details and streaming links.</p>
+        <div class="search-container">
+            <input type="text" id="animeName" placeholder="Search for anime...">
+            <button id="searchButton"><span>Search</span></button>
+        </div>
+        
+<div class="random-anime-section">
+    <button id="randomAnimeBtn" class="random-btn">
+        <span role="img" aria-label="dice">🎲</span> Get Random Anime
+    </button>
+</div>
+<div id="suggestions" class="suggestions-container"></div>
+<div id="results"></div>
+<div id="disclaimer-section">
+    <p class="disclaimer-text">
+        Disclaimer: We are not affiliated with these websites. Please use them at your own risk.
+    </p>
+</div>
+        
+    </div>
+
+    <div id="donationPage" class="page">
+        <a href="#" id="backBtn1" class="back-btn">&lt; Back</a>
+        <h2>Donations</h2>
+        <p>If you find Anime-Finder helpful, please consider making a contribution.</p>
+        
+        <a href="https://buymeacoffee.com/neyab" target="_blank" class="donate-btn">Buy Me a Coffee</a>
+
+        <a href="trust://send?asset=c742576b251215b4931a7de6290074f4b2326774&to=0x8af1Db6c36fc025F9B249C2E82ce4dfb1CDE874D" class="donate-btn">Pay with Trust Wallet</a>
+
+        <div class="crypto-details">
+            <p>or copy USDT (ERC-20) address</p>
+            <div class="crypto-address">
+                <span>0x8af1Db6c36fc025F9B249C2E82ce4dfb1CDE874D</span>
+                <button class="copy-btn">📋</button>
+            </div>
+            <p class="share-message">
+    If you can't donate, please consider sharing **Anime-Finder** with a friend! 😊
+</p>
+        </div>
+    </div>
+
+    <div id="feedbackPage" class="page">
+        <a href="#" id="backBtn2" class="back-btn">&lt; Back</a>
+        <h2>Provide Feedback</h2>
+        <p>Your suggestions are important to us. Tell us how we can make Anime-Finder even better.</p>
+        <form id="feedbackForm" action="https://formspree.io/f/xblzprlg" method="POST">
+    <textarea id="feedbackText" name="feedback" placeholder="Your feedback goes here..."></textarea>
+    <button id="sendFeedbackBtn" class="send-btn" type="submit">Send Feedback</button>
+</form>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
