@@ -1,0 +1,453 @@
+body {
+    width: 350px;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    
+    /* Dynamic gradient aur image ko ek saath lagaya gaya hai */
+    background: linear-gradient( transparent, rgba(0, 0, 0, 0.7) ), 
+                url('icons/animebackground.png') no-repeat center center;
+    background-size: cover, cover; /* Poore area ko cover kare */
+    background-attachment: fixed; /* Scroll karne par image fixed rahe */
+
+    color: #f0f0f0; /* Bright text */
+    min-height: auto; /* Poora height cover karne ke liye */
+    animation: gradientShift 10s ease infinite; /* Animation add kiya gaya hai */
+    
+}
+
+/* New header buttons */
+.header-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+.header-btn {
+    background: transparent;
+    border: none;
+    color: #5209aa;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Page management */
+.page {
+    display: none;
+}
+.active-page {
+    display: block;
+}
+
+/* Back button */
+.back-btn {
+    color: #5209aa;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* Donation and Feedback page styles */
+#donationPage h2, #feedbackPage h2 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+#donationPage p, #feedbackPage p {
+    font-size: 14px;
+    color: #d0d0d0;
+    margin-bottom: 20px;
+}
+.donate-btn {
+    background-color: #5209aa;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    font-weight: 600;
+    text-align: center;
+}
+.crypto-address {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.copy-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #03dac6;
+    font-size: 16px;
+}
+#feedbackText {
+    width: 90%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    resize: none;
+    margin-bottom: 10px;
+}
+/* Placeholder text style for feedback textarea */
+textarea::placeholder {
+    color: #bbb; /* Yeh light grey color hai, aap apni pasand ka koi aur bright color choose kar sakte hain */
+    opacity: 1; /* Default browser opacity ko override karne ke liye */
+}
+.send-btn {
+    background-color: #5209aa;
+    color: #121212;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 14px;
+    color: #d0d0d0; /* Halka grey text */
+}
+
+/* Search container aur iske aage ke elements ke liye */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 5px; /* Corner rounded karne ke liye */
+    z-index: 1; /* Taki gradient upar dikhe */
+    overflow: hidden;
+    /* Box shadow hata diya gaya hai */
+}
+
+/* Gradient border effect */
+.search-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #00c6ff, #0072ff, #bb86fc, #d600ff, #ffeb3b, #ff5722, #ffa500, #ff1493, #32cd32, #00ffff); /* Naye colors add kiye gaye hain */
+    background-size: 1000% 100%; /* Background size ko badhaya gaya hai taaki naye colors fit ho saken */
+    border-radius: 5px;
+    z-index: -1;
+    animation: gradientShift 10s linear infinite alternate; /* Animation speed ko adjust kiya gaya hai */
+}
+
+/* Input field aur button ka background */
+#animeName,
+#searchButton {
+    background-color: transparent; /* Thoda transparent */
+    border: none;
+    outline: none;
+    color: #ffffff;
+}
+
+#animeName {
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+    width: 70%;
+}
+
+/* Placeholder text ka color white karne ke liye */
+#animeName::placeholder {
+    color: #ffffff; /* Placeholder ka color white */
+    opacity: 0.8; /* Thoda transparent rakhte hain taaki acha dikhe */
+}
+
+/* Aur agar aap chahen to focus par color badal sakte hain */
+#animeName:focus::placeholder {
+    color: transparent; /* Focus hone par placeholder gayab ho jayega */
+}
+
+#searchButton {
+    padding: 10px 15px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+/* Input field ka focus effect */
+#animeName:focus {
+    box-shadow: 0 0 10px #ff8888;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Gradient border effect */
+.search-container::before {
+    /* ... (baaki code waisa hi rahega) ... */
+    animation: gradientShift 10s linear infinite alternate; /* 'alternate' property add ki gayi hai */
+}
+
+#results {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.result-card {
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #2a2a2a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.result-card h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.result-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.link-section {
+    margin-top: 15px;
+}
+
+.link-section h4 {
+    margin-top: 0;
+    color: #9047ff; /* Bright purple heading */
+}
+
+.link-section p {
+    color: #cccccc; /* Thoda halka text */
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.link-section a {
+    display: inline-block;
+    background-color: #00e676; /* Bright green */
+    color: #2a2a2a;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.link-section a:hover {
+    background-color: #039741; /* Darker green on hover */
+}
+/* Naya Button Style */
+.main-site-btn {
+    background-color: #9047ff; /* Purple color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.main-site-btn:hover {
+    background-color: #a052ff;
+}
+.support-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#donateButton {
+    background-color: #ff8888; /* Reddish color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+#donateButton:hover {
+    background-color: #e85858;
+}
+
+.feedback-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.feedback-section h4 {
+    color: #bb86fc;
+}
+
+#feedbackText {
+    width: 90%;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    resize: none; /* User isko resize nahi kar paega */
+    margin-bottom: 10px;
+}
+
+#submitFeedback {
+    background-color: #03dac6;
+    color: #121212;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+#submitFeedback:hover {
+    background-color: #01998f;
+}
+
+/* Suggestions container */
+.suggestions-container {
+    width: 90%;
+    overflow-y: auto;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Initially hide the suggestions */
+}
+
+/* Individual suggestion item */
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+    background-color: #444;
+}
+
+.suggestion-item p {
+    margin: 0;
+    color: #e0e0e0;
+}
+
+/* Individual suggestion item */
+.suggestion-item {
+    padding: 8px 10px; /* Thoda padding adjust kiya */
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.2s;
+    display: flex; /* Images aur text ko ek line mein laane ke liye */
+    align-items: center; /* Vertically align karne ke liye */
+    gap: 10px; /* Image aur text ke beech space */
+}
+
+.suggestion-item:hover {
+    background-color: #444;
+}
+
+.suggestion-item p {
+    margin: 0;
+    color: #e0e0e0;
+    flex-grow: 1; /* Text ko baaki space dene ke liye */
+}
+
+/* Suggestion thumbnail image */
+.suggestion-thumbnail {
+    width: 40px; /* Thumbnail ki चौड़ाई */
+    height: 60px; /* Thumbnail ki ऊँचाई */
+    object-fit: cover; /* Image ko crop karne ke liye taaki achi dikhe */
+    border-radius: 3px; /* Thode gol corners */
+}
+.share-message {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #9047ff; /* A different color to make it stand out */
+    font-weight: 500;
+}
+/* Random Anime Button Section */
+.random-anime-section {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.random-btn {
+    background: linear-gradient(145deg, #a052ff, #8000ff); /* Purple gradient */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.random-btn:hover {
+    background: linear-gradient(145deg, #b882ff, #a052ff);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.random-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#disclaimer-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.disclaimer-text {
+    font-size: 12px;
+    color: #ffcc00; /* Ek warning jaisa color */
+    margin: 0;
+    font-style: italic;
+    text-align: center;
+}
